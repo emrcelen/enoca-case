@@ -1,0 +1,31 @@
+services:
+  db:
+    container_name: enoca-postgresql
+    image: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - enoca-network
+    restart: always
+    environment:
+      POSTGRES_DB: enoca
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: enoca-pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: enoca@root.com
+      PGADMIN_DEFAULT_PASSWORD: enoca
+    ports:
+      - "8081:80"
+    networks:
+      - enoca-network
+    restart: always
+
+networks:
+  enoca-network:
+    driver: bridge

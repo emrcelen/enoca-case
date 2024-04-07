@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: enoca-challenge
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/enoca"
+    username: root
+    password: root
+  output:
+    ansi:
+      enabled: ALWAYS
+
+server:
+  port: 8080
+  forward-headers-strategy: framework
+
+security:
+  jwt:
+    secret: 5pAq6zRyX8bC3dV2wS7gN1mK9jF0hL4tUoP6iBvE3nG8xZaQrY7cW2fA
