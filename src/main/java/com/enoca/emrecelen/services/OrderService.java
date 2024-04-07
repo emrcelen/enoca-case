@@ -63,6 +63,7 @@ public class OrderService {
                 logger.info("Discounted order placed by customer with Id {} for total amount of ${}", customer.getId(), orderTotalPrice);
             else{
                 cartService.updateCart(customer);
+                this.orderRepository.delete(entity);
                 throw new ProductPriceChangeException();
             }
         }
