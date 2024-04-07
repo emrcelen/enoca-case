@@ -22,3 +22,10 @@ Additionally, a customer can see the historical price of products in their order
 **Documentation**
 
 Swagger documentation for the API endpoints can be found [Swagger Documentation](http://localhost:8080/swagger-ui.html).
+
+**Docker Compose**
+
+To run the application using Docker Compose, navigate to the project directory and run the following command:
+
+```bash
+docker-compose up
